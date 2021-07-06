@@ -1,10 +1,12 @@
-# template-typescript
-Template repo for my Typescript projects
+# json-split-transformer
+A fast and lightweight transformer to transform chunks of JSON strings to valid JSON strings 
 [![GitHub license](https://img.shields.io/github/license/jeswr/json-split-transformer.svg)](https://github.com/jeswr/json-split-transformer/blob/master/LICENSE)
 [![npm version](https://img.shields.io/npm/v/@jeswr/json-split-transformer.svg)](https://www.npmjs.com/package/@jeswr/json-split-transformer)
 [![build](https://img.shields.io/github/workflow/status/jeswr/json-split-transformer/Node.js%20CI)](https://github.com/jeswr/json-split-transformer/tree/main/)
 [![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
+#
 
 ## Usage
 ```ts
