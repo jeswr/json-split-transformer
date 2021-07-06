@@ -1,5 +1,6 @@
 # json-split-transformer
-A fast and lightweight transformer to transform chunks of JSON strings to valid JSON strings 
+A fast and lightweight transformer to transform chunks of JSON strings to valid JSON strings
+
 [![GitHub license](https://img.shields.io/github/license/jeswr/json-split-transformer.svg)](https://github.com/jeswr/json-split-transformer/blob/master/LICENSE)
 [![npm version](https://img.shields.io/npm/v/json-split-transformer.svg)](https://www.npmjs.com/package/json-split-transformer)
 [![build](https://img.shields.io/github/workflow/status/jeswr/json-split-transformer/Node.js%20CI)](https://github.com/jeswr/json-split-transformer/tree/main/)
