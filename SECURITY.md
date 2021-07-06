@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Versions of the project currently recieving security updates
+Versions of the project currently receiving security updates
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -10,4 +10,4 @@ Versions of the project currently recieving security updates
 
 ## Reporting a Vulnerability
 
-To report a vunerability send an email to [jesse.wright@anu.edu.au](jesse.wright@anu.edu.au) with subject "Vunerability Report: template-typescript"
+To report a vunerability send an email to [jesse.wright@anu.edu.au](jesse.wright@anu.edu.au) with subject "Vunerability Report: json-split-transformer"

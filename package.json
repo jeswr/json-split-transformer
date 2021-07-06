@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "json-split-transformer",
   "version": "0.0.0-development",
-  "description": "",
+  "description": "A fast and lightweight transformer to transform chunks of JSON strings to valid JSON strings",
   "main": "dist/index.js",
   "types": "dist/index.d.js",
   "directories": {
@@ -22,15 +22,22 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/jeswr/json-split-transformer"
   },
-  "keywords": [],
+  "keywords": [
+    "JSON",
+    "split",
+    "stream",
+    "transformer",
+    "iterable",
+    "lightweight"
+  ],
   "author": "Jesse Wright <jesse.wright@anu.edu.au>",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/jeswr/json-split-transformer#issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/jeswr/json-split-transformer#readme",
   "devDependencies": {
     "@types/jest": "^26.0.19",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
@@ -39,7 +46,6 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "jest": "^26.6.3",
-    "jest-coverage-badges": "^1.1.2",
     "pre-commit": "^1.2.2",
     "semantic-release": "^17.3.1",
     "ts-jest": "^26.4.4",
@@ -49,16 +55,16 @@
     "preset": "ts-jest",
     "collectCoverage": true,
     "coverageReporters": [
-      "json-summary", 
+      "json-summary",
       "text",
       "lcov"
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
       }
     }
   },
