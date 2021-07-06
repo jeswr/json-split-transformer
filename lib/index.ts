@@ -38,7 +38,7 @@ export default class JSONTransformer {
     }
 
     if (this.nesting > 0) {
-      this.string = str.slice(this.start);
+      this.string = this.string ? this.string + str.slice(this.start) : str.slice(this.start);
     }
 
     // This is for when the first character in the next string chunk is escaped
