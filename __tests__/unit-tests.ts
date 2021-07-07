@@ -1,8 +1,3 @@
-// '{"time":1625581',
-//       '199',
-//       '479,"values":[32,23]}{"ti',
-//       'me":1625581199482,"values":[31,12]}'
-
 import JSONSplitTransformer from '../lib';
 
 describe('Single JSON object split into several chunks', () => {
