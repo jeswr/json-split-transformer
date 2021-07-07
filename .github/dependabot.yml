@@ -10,5 +10,5 @@ updates:
     schedule:
       interval: "weekly"
     labels:
-      - "dependabot"
+      - "dependencies"
       - "automerge"
