@@ -11,8 +11,8 @@ export default class JSONTransformer {
     let i = this.start;
     if (this.escaped) {
       while (str[i] !== '"' && i < str.length) { i += (str[i] === '\\' ? 2 : 1); }
-      i += 1;
       this.escaped = str[i] !== '"';
+      i += 1;
     }
 
     for (; i < str.length; i += 1) {
@@ -45,13 +45,13 @@ export default class JSONTransformer {
     }
 
     if (this.nesting > 0) {
-      this.string = this.string ? this.string + str.slice(this.start) : str.slice(this.start);
+      this.string = this.string ? this.string + str : str.slice(this.start);
     }
 
-    // This is for when the first character in the next string chunk is escaped
-    this.start = this.escaped && str[str.length - 1] === '\\' ? 1 : 0;
+    // When a chunk ends part-way through an escape sequence the scan overshoots
+    // the end of the chunk by one; the first character of the next chunk is the
+    // escaped character and must not be re-scanned as a delimiter
+    this.start = this.escaped ? i - str.length - 1 : 0;
     done();
   }
 }
-
-// Current error is that escapes are not being maintained accross chunks

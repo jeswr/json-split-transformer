@@ -122,6 +122,48 @@ describe('Two JSON objects split in one chunk', () => {
   });
 });
 
+describe('String and escape state across chunk boundaries', () => {
+  let streamSplitter: JSONSplitTransformer;
+
+  beforeEach(() => {
+    streamSplitter = new JSONSplitTransformer();
+  });
+
+  it('Should handle a string literal that closes in a later chunk', () => {
+    const arr: string[] = [];
+    const push = (str: string) => { arr.push(str); };
+
+    streamSplitter.transform('{"a', () => {}, push);
+    expect(arr).toHaveLength(0);
+    streamSplitter.transform('b": 1', () => {}, push);
+    expect(arr).toHaveLength(0);
+    streamSplitter.transform(', "c": 2}', () => {}, push);
+    expect(arr).toEqual(['{"ab": 1, "c": 2}']);
+  });
+
+  it('Should handle a chunk ending with a complete \\\\ escape pair', () => {
+    const arr: string[] = [];
+    const push = (str: string) => { arr.push(str); };
+
+    streamSplitter.transform('{"a\\\\', () => {}, push);
+    expect(arr).toHaveLength(0);
+    streamSplitter.transform('": 1}', () => {}, push);
+    expect(arr).toEqual(['{"a\\\\": 1}']);
+  });
+
+  it('Should not drop characters when an object continues past an escaped chunk boundary', () => {
+    const arr: string[] = [];
+    const push = (str: string) => { arr.push(str); };
+
+    streamSplitter.transform('{"ti\\', () => {}, push);
+    expect(arr).toHaveLength(0);
+    streamSplitter.transform('"me": 1', () => {}, push);
+    expect(arr).toHaveLength(0);
+    streamSplitter.transform('}', () => {}, push);
+    expect(arr).toEqual(['{"ti\\"me": 1}']);
+  });
+});
+
 describe('Nested JSON objects', () => {
   let streamSplitter: JSONSplitTransformer;
 
