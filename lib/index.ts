@@ -7,6 +7,15 @@ export default class JSONTransformer {
 
   private start = 0;
 
+  // Discards any partially buffered JSON and returns the transformer to its
+  // initial state so the instance can be reused on a new stream
+  public reset = () => {
+    delete this.string;
+    this.nesting = 0;
+    this.escaped = false;
+    this.start = 0;
+  }
+
   public transform = (str: string, done: () => void, push: (data: string) => void) => {
     let i = this.start;
     if (this.escaped) {
